@@ -1,0 +1,7 @@
+{
+  "port": 7777,
+  "debug": false,
+  "mbAPIKey": "your MindBehind api key",
+  "mbBaseUrl": "https://waba.mindbehind.com",
+  "projectId": "your-dialogflow-projectid"
+}
