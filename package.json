@@ -12,6 +12,8 @@
     "lodash": "^4.17.19"
   },
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS=./dialogflowCredentials.json node ./src/index.js"
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=./dialogflowCredentials.json node ./src/index.js",
+    "start-win": "npm run setEnv-win & node ./src/index.js",
+    "setEnv-win": "set GOOGLE_APPLICATION_CREDENTIALS=\"./dialogflowCredentials.json\""
   }
 }

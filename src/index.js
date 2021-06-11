@@ -45,9 +45,8 @@ const messageHandler = async (req, res) => {
         response = {
           text: result[0].queryResult.fulfillmentText,
         };
-
     }
-
+    
     if (config.debug) {
       console.log(require('util').inspect(response, false, 15));
     } else {
@@ -56,7 +55,7 @@ const messageHandler = async (req, res) => {
         text: response.text,
       });
       if (response.pictures) {
-        for (const picture of response.pictures) {
+        for (let picture of response.pictures) {
           await whatsappClient.sendWhatsappImage({
             to: targetMessage.from,
             media: picture,

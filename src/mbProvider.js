@@ -17,15 +17,14 @@ const sendWhatsappTextMessage = async params => {
 const sendWhatsappImage = async params => {
   const request = {
     to: params.to,
-    to: params.to,
     recipient_type: "individual",
-    type: "text",
+    type: "image",
     image: {
-      link: params.media,
+      link: params.media.url,
     }
   };
-
-  return axios.post(`${config.mbBaseUrl}/v1/messages`, request, { headers: { "MB-API-KEY": config.mbAPIKey } });
+  const response = axios.post(`${config.mbBaseUrl}/v1/messages`, request, { headers: { "MB-API-KEY": config.mbAPIKey } });
+  return response;
 }
 
 module.exports = {
